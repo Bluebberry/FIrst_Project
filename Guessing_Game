@@ -1,0 +1,22 @@
+import random as r
+secret_number = r.randint(1, 100)
+tries = 0
+number_guessed = 0
+correct_answer = False
+
+while tries < 8 and not correct_answer:
+    number_guessed = int(input("Your Guess for Random Number (1-100): "))
+    tries = tries + 1
+    if number_guessed == secret_number:
+        correct_answer = True
+    if number_guessed > secret_number:
+        print("Try lower")
+    if number_guessed < secret_number:
+        print("Try higher")
+
+if correct_answer:
+    print("Correct Answer")
+if not correct_answer:
+    print("LMAO")
+if tries < 8:
+    print("No more tries")
